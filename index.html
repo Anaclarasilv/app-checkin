@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appcheckin</title>
+    <link rel="stalesheet" href="css.css">
+    <link rel="manifest" href="manifst.json">
+</head>
+
+<body>
+    <h1>appcheckin</h1>
+
+    <form id="login-form">
+    <fieldset>
+        <input type="text" id="user-input" placeholder="login" required><br />
+        <input type="password" id="password-input" placeholder="Senha" required>
+        <button type="submit">Logar</button>
+    </fieldset>
+    </form>
+    <!--scrit do servse woeker-->
+    <script>
+        if('serviceWorker' in navigator){
+            navigator.serviceWorker.register('/service-Worker.js')
+            .then(registration=>
+                {console.log('serviço Iniciado - service start', registration.scope);})
+                .catch(error=> {console.log('falha na inicialização do serviço'),error});
+        } 
+
+    </script>
+    
+</body>
+</html>
